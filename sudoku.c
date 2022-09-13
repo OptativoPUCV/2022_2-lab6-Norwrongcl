@@ -64,11 +64,11 @@ int is_valid(Node* n){
   for (int i=0; i< 9; i++){
     for (int z=0; z<10; z++) submatriz[z]= 0;
     for (int k= 0; k< 9; k++){
-      int iSub= 3*(i/3)+ (k/3);
-      int kSub= 3*(i%3)+ (k%3);
-      if (n->sudo[iSub][kSub] != 0){
-        if (submatriz[n->sudo[iSub][kSub]] == 1) return 0;
-        else submatriz[n->sudo[iSub][kSub]]= 1;
+      int subi= 3*(i/3)+ (k/3);
+      int subk= 3*(i%3)+ (k%3);
+      if (n->sudo[subi][subk] != 0){
+        if (submatriz[n->sudo[subi][subk]] == 1) return 0;
+        else submatriz[n->sudo[subi][subk]]= 1;
       }
     }
 	}
