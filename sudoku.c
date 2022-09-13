@@ -4,18 +4,18 @@
 
 
 typedef struct{
-   int sudo[9][9];
+  int sudo[9][9];
 }Node;
 
 Node* createNode(){
-  Node* n=(Node*) malloc(sizeof(Node));
+  Node* n=(Node*)malloc(sizeof(Node));
   return n;
 }
 
 Node* copy(Node* n){
-    Node* new=(Node*) malloc(sizeof(Node));
-    *new = *n;
-    return new;
+  Node* new=(Node*)malloc(sizeof(Node));
+  *new= *n;
+  return new;
 }
 
 Node* read_file (char* file_name){
@@ -162,14 +162,11 @@ Node* DFS(Node* initial, int* cont){
   return NULL;
 }
 
-
-
-
-int main( int argc, char *argv[] ){
+/*int main( int argc, char *argv[] ){
   Node* initial= read_file("s12a.txt");;
   int cont=0;
   Node* final = DFS(initial, &cont);
   printf("iterations:%d\n",cont);
   print_node(final);
   return 0;
-}
+}*/

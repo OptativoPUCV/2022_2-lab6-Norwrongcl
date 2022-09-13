@@ -16,3 +16,9 @@ sudoku.c:168:5: note: previous definition of ‘main’ was here
       |     ^~~~
 Compilation failed
 c8a58a6
+Tue 13 Sep 2022 10:31:59 PM UTC: 
+ sudoku.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+ tests:  10|0
+total_score: 70/70
+d8052ed
