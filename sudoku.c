@@ -32,9 +32,8 @@ Node* read_file (char* file_name){
 
 void print_node(Node* n){
     for(int i=0; i<9; i++){
-       for(j=0;j<9;j++)
-          printf("%d ", n->sudo[i][j]);
-       printf("\n");
+      for(int j=0;j<9; j++) printf("%d ", n->sudo[i][j]);
+      printf("\n");
     }
     printf("\n");
 }
