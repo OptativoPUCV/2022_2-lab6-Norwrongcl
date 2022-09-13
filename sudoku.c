@@ -60,7 +60,6 @@ int is_valid(Node* n){
       }
     }
   }
-
   for (int i=0; i< 9; i++){
     for (int z=0; z<10; z++) submatriz[z]= 0;
     for (int k= 0; k< 9; k++){
@@ -111,22 +110,20 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  Stack* S = createStack();
-  push(S, initial);
-  int size = get_size(S);
-  *cont = 0;
-  while (size != 0){
-    Node* n = first(S);
+  Stack* stack= createStack();
+  push(stack, initial);
+  int size= get_size(S);
+  *cont= 0;
+  while(size != 0){
+    Node* n= first(S);
     if (!n) return NULL;
     popFront(S);
     if (is_final(n)) return n;
-
-    List* adj = get_adj_nodes(n);
-    Node* aux = first(adj);
-    while (aux != NULL)
-    {
+    List* adj= get_adj_nodes(n);
+    Node* aux= first(adj);
+    while (aux != NULL){
       push(S, aux);
-      aux = next(adj);
+      aux= next(adj);
     }
     free(aux);
     (*cont)++;

@@ -81,3 +81,14 @@ Tue 13 Sep 2022 11:07:39 PM UTC:
  tests:  10|0
 total_score: 70/70
 d30ce8c
+Tue 13 Sep 2022 11:09:12 PM UTC: 
+ sudoku.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:115:22: error: ‘S’ undeclared (first use in this function)
+  115 |   int size= get_size(S);
+      |                      ^
+sudoku.c:115:22: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+fb67704
