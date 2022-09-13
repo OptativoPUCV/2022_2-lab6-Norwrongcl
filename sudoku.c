@@ -31,49 +31,35 @@ Node* read_file (char* file_name){
 }
 
 void print_node(Node* n){
-    for(int i=0; i<9; i++){
-      for(int j=0;j<9; j++) printf("%d ", n->sudo[i][j]);
-      printf("\n");
-    }
+  for(int i=0; i<9; i++){
+    for(int j=0; j<9; j++) printf("%d ", n->sudo[i][j]);
     printf("\n");
+  }
+  printf("\n");
 }
 
 int is_valid(Node* n){
-    int i, k;
-    int fila[10];
-    int columna[10];
-    int submatriz[10];
-    
-    for (i = 0; i < 9; i++)
-    {
-      for (int a = 0; a < 10; a++)
-        fila[a] = 0;
-      for (k = 0; k < 9; k++)
-      {
-        if (n->sudo[i][k] != 0)
-        {
-          if (fila[n->sudo[i][k]] == 1) 
-            return 0;
-          else 
-            fila[n->sudo[i][k]] = 1;
-        }
+  int fila[10];
+  int columna[10];
+  int submatriz[10];
+  for (int i=0; i<9; i++){
+    for (int a=0; a<10; a++) fila[a]= 0;
+    for (int k=0; k<9; k++){
+      if (n->sudo[i][k] != 0){
+        if (fila[n->sudo[i][k]] == 1) return 0;
+        else fila[n->sudo[i][k]]= 1;
       }
     }
-
-    for (i = 0; i < 9; i++)
-      {
-        for (int b = 0; b < 10; b++)
-          columna[b] = 0;
-
-        for (k = 0; k < 9; k++)
-          {
-            if (n->sudo[k][i] != 0)
-            {
-              if (columna[n->sudo[k][i]] == 1) return 0;
-              else columna[n->sudo[k][i]] = 1;
-            }
-          }
+  }
+  for (int i=0; i<9; i++){
+    for (int b=0; b<10; b++) columna[b]= 0;
+      for (int k=0; k<9; k++){
+        if (n->sudo[k][i] != 0){
+        	if (columna[n->sudo[k][i]] == 1) return 0;
+          else columna[n->sudo[k][i]]= 1;
+        }
       }
+  }
 
     for (int m = 0; m < 9; m++)
       {
