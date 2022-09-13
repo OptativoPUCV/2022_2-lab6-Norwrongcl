@@ -103,3 +103,14 @@ sudoku.c:118:20: error: ‘S’ undeclared (first use in this function)
 sudoku.c:118:20: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 2acb558
+Tue 13 Sep 2022 11:09:34 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:125:12: error: ‘S’ undeclared (first use in this function)
+  125 |       push(S, aux);
+      |            ^
+sudoku.c:125:12: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+0f20df4
