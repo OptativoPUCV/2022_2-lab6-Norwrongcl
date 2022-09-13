@@ -114,3 +114,9 @@ sudoku.c:125:12: error: ‘S’ undeclared (first use in this function)
 sudoku.c:125:12: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 0f20df4
+Tue 13 Sep 2022 11:09:42 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  10|0
+total_score: 70/70
+f85d076
