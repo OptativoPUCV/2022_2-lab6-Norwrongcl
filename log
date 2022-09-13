@@ -28,3 +28,14 @@ Tue 13 Sep 2022 10:32:38 PM UTC:
  tests:  10|0
 total_score: 70/70
 6c5bd5b
+Tue 13 Sep 2022 10:33:27 PM UTC: 
+ sudoku.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘print_node’:
+sudoku.c:35:12: error: ‘j’ undeclared (first use in this function)
+   35 |        for(j=0;j<9;j++)
+      |            ^
+sudoku.c:35:12: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+957c57c

@@ -21,20 +21,17 @@ Node* copy(Node* n){
 Node* read_file (char* file_name){
   Node* n= createNode();
   FILE* file= fopen(file_name, "r");
-  for(int i=0;i<9;i++){
-       for(int j=0;j<9;j++){
-          if(!fscanf (file, "%d", &n->sudo[i][j]))
-            printf("failed to read data!");
-       }
+  for(int i=0; i<9; i++){
+    for(int j=0; j<9; j++){
+      if(!fscanf (file, "%d", &n->sudo[i][j])) printf("failed to read data!");
+    }
   }
-
-  fclose (file);
+  fclose(file);
   return n;
 }
 
 void print_node(Node* n){
-    int i,j;
-    for(i=0;i<9;i++){
+    for(int i=0; i<9; i++){
        for(j=0;j<9;j++)
           printf("%d ", n->sudo[i][j]);
        printf("\n");
