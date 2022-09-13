@@ -53,22 +53,19 @@ int is_valid(Node* n){
   }
   for (int i=0; i<9; i++){
     for (int b=0; b<10; b++) columna[b]= 0;
-      for (int k=0; k<9; k++){
-        if (n->sudo[k][i] != 0){
-        	if (columna[n->sudo[k][i]] == 1) return 0;
-          else columna[n->sudo[k][i]]= 1;
-        }
+    for (int k=0; k<9; k++){
+      if (n->sudo[k][i] != 0){
+      	if (columna[n->sudo[k][i]] == 1) return 0;
+        else columna[n->sudo[k][i]]= 1;
       }
+    }
   }
 
-    for (int m = 0; m < 9; m++)
-      {
-        for (int c = 0; c < 10; c++)
-         submatriz[c] = 0;
-        for (int y = 0; y < 9; y++)
-          {
-            int iSub = 3*(m/3) + (y/3);
-            int kSub = 3*(m%3) + (y%3);
+  for (int i=0; i< 9; i++){
+        for (int c=0; c<10; c++) submatriz[c]= 0;
+        for (int k= 0; k< 9; k++){
+            int iSub = 3*(i/3) + (k/3);
+            int kSub = 3*(i%3) + (k%3);
             if (n->sudo[iSub][kSub] != 0)
             {
               if (submatriz[n->sudo[iSub][kSub]] == 1) return 0;
