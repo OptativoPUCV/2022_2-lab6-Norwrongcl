@@ -64,17 +64,16 @@ int is_valid(Node* n){
   for (int i=0; i< 9; i++){
     for (int c=0; c<10; c++) submatriz[c]= 0;
     for (int k= 0; k< 9; k++){
-      int iSub = 3*(i/3) + (k/3);
-      int kSub = 3*(i%3) + (k%3);
+      int iSub= 3*(i/3)+ (k/3);
+      int kSub= 3*(i%3)+ (k%3);
       if (n->sudo[iSub][kSub] != 0){
         if (submatriz[n->sudo[iSub][kSub]] == 1) return 0;
-        else submatriz[n->sudo[iSub][kSub]] = 1;
+        else submatriz[n->sudo[iSub][kSub]]= 1;
       }
     }
 	}
   return 1;
 }
-
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
@@ -102,16 +101,13 @@ List* get_adj_nodes(Node* n){
     return list;
 }
 
-
 int is_final(Node* n){
-    for (int i = 0; i < 9; i++)
-    {
-      for (int k = 0; k < 9; k++)
-      {
-        if (n->sudo[i][k] == 0) return 0;
-      }
+  for (int i=0; i<9; i++){
+    for (int k=0; k<9; k++){
+      if (n->sudo[i][k] == 0) return 0;
     }
-    return 1;
+  }
+  return 1;
 }
 
 Node* DFS(Node* initial, int* cont){
@@ -119,8 +115,7 @@ Node* DFS(Node* initial, int* cont){
   push(S, initial);
   int size = get_size(S);
   *cont = 0;
-  while (size != 0)
-  {
+  while (size != 0){
     Node* n = first(S);
     if (!n) return NULL;
     popFront(S);
